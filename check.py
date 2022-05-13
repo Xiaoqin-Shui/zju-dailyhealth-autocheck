@@ -188,11 +188,9 @@ class HealthCheckInHelper(ZJULogin):
             self.Push('打卡网页获取失败')
         finally:
 
-            print('new_info_tmp=',re.findall(r'def = ({[^\n]+})', html))
-            print('html=',html)
+#             print('new_info_tmp=',re.findall(r'def = ({[^\n]+})', html))
+#             print('html=',html)
             new_info_tmp = json.loads(re.findall(r'def = ({[^\n]+})', html)[0])
-            
-            
             new_id = new_info_tmp['id']
             new_uid = new_info_tmp['uid']
             # 拼凑geo信息
